@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/task_item_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="5dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardBackgroundColor="@color/black"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="0dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/task_item_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_marginTop="8dp"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/delete_fab"
+            app:layout_constraintHorizontal_bias="0.094"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Topic" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/edit_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/task_item_date"
+            android:scaleType="center"
+            app:fabCustomSize="25dp"
+            app:layout_anchorGravity="bottom|end"
+            app:layout_constraintEnd_toStartOf="@+id/task_item_date"
+            app:layout_constraintTop_toTopOf="parent"
+            app:maxImageSize="15dp"
+            app:srcCompat="@android:drawable/ic_menu_edit" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/delete_fab"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:layout_toStartOf="@+id/edit_fab"
+            android:backgroundTint="@color/red"
+            android:scaleType="center"
+            app:fabCustomSize="25dp"
+            app:layout_anchorGravity="top|center"
+            app:layout_constraintEnd_toStartOf="@+id/edit_fab"
+            app:layout_constraintTop_toTopOf="parent"
+            app:maxImageSize="15dp"
+            app:srcCompat="@android:drawable/ic_menu_delete" />
+
+        <TextView
+            android:id="@+id/task_item_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="8dp"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="17/01/2002" />
+
+        <TextView
+            android:id="@+id/task_item_note"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/task_item_title"
+            android:layout_margin="8dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="12dp"
+            android:maxLines="3"
+            android:padding="4dp"
+            android:textColor="@color/white"
+            app:layout_anchor="@+id/task_item_title"
+            app:layout_anchorGravity="bottom|center"
+            app:layout_constraintEnd_toEndOf="@+id/task_item_date"
+            app:layout_constraintHorizontal_bias="0.063"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/task_item_title"
+            tools:text="This is a Sample Text" />
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
